@@ -1,30 +1,93 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+	<Spinner :isLoading="isLoading" />
+	<div id="nav">
+		<Navbar />
+	</div>
+	<div class="principalContainer">
+		<router-view />
+		<Footer />
+	</div>
+	<ContactInfo />
 </template>
 
+<script>
+	import Navbar from "./components/Navbar.vue";
+	import Footer from "./components/Footer.vue";
+	import ContactInfo from "./components/ContactInfo.vue";
+	import Spinner from "./components/Spinner.vue";
+
+	export default {
+		name: "App",
+		components: {
+			Navbar,
+			Footer,
+			ContactInfo,
+			Spinner,
+		},
+		data() {
+			return {
+				isLoading: true,
+			};
+		},
+		mounted() {
+			setTimeout(() => {
+				this.isLoading = false;
+			}, 3000);
+		},
+	};
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+	@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
 
-#nav {
-  padding: 30px;
-}
+	body {
+		background-color: #002142;
+		display: flex;
+		flex-wrap: wrap;
+		width: 100%;
+		font-family: "Varela Round", sans-serif;
+	}
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+	li,
+	a,
+	h3,
+	h1,
+	h2,
+	p,
+	button {
+		font-weight: 500;
+		font-size: 30px;
+		color: #edf0f1;
+		text-decoration: none;
+	}
+	.principalContainer {
+		width: 70%;
+		height: auto;
+		margin: 0 15%;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+	}
+	.textGreenA {
+		color: #12b98f;
+	}
+	.textGray {
+		color: #8892b0;
+	}
 
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+	p {
+		font-size: 45px;
+		text-align: center;
+	}
+	@media (min-width: 0px) and (max-width: 700px) {
+		.principalContainer {
+			width: 90%;
+			margin: 0 auto;
+		}
+	}
 </style>
