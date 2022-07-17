@@ -1,7 +1,7 @@
 <template>
 	<div class="descriptionContainer">
 		<div class="leftContent">
-			<img src="../assets/images/fotoJorge.jpg" alt="" />
+			<img src="../../assets/images/fotoJorge.jpg" alt="" />
 		</div>
 		<div class="rightContent">
 			<p class="largeText">
@@ -30,13 +30,13 @@
 		border-radius: 10%;
 		width: 28%;
 		overflow: hidden;
-		display:flex;
+		display: flex;
 		align-items: center;
 	}
 	.rightContent {
 		width: 70%;
-		display:flex;
-		align-items:center;
+		display: flex;
+		align-items: center;
 	}
 	.largeText {
 		font-size: 24px;
@@ -51,19 +51,25 @@
 		margin-right: 60px;
 		opacity: 1;
 	}
-	@media (max-width:1080px){
-		.descriptionContainer{
-			flex-wrap:wrap;
+	@media (max-width: 1080px) {
+		.descriptionContainer {
+			flex-wrap: wrap;
 		}
-		.leftContent,.rightContent{
+		.leftContent,
+		.rightContent {
 			width: 100%;
 		}
-		.largeText{
-			text-align:center;
+		.largeText {
+			text-align: center;
 		}
-		img{
+		img {
 			max-width: 350px;
 			margin: 0 auto;
+		}
+	}
+	@media (max-width: 350px) {
+		.largeText{
+			font-size:20px;
 		}
 	}
 </style>

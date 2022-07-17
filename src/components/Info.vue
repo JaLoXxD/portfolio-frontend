@@ -104,10 +104,10 @@
 	@media (min-width: 0px) and (max-width: 360px) {
 		.principalTitle,
 		.ml1.letters {
-			line-height: 60px;
+			line-height: 1;
 		}
 		.principalTitle {
-			font-size: 38px;
+			font-size: 25px;
 		}
 		.ml1 .letters {
 			padding: 15px 0 10px 0;
@@ -118,10 +118,12 @@
 			height: 100vh;
 			width: 100%;
 		}
+
 	}
 	@media (min-width: 361px) and (max-width: 600px) {
 		.principalTitle {
-			font-size: 48px;
+			font-size: 38px;
+			line-height: 1;
 		}
 		.ml1 .letters {
 			padding: 15px 0 10px 0;

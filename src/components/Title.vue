@@ -49,14 +49,18 @@
 			border: 2px solid #31ddb2;
 		}
 	}
-	@media (min-width: 0px) and (max-width: 360px) {
+	@media (max-width: 600px) {
 		.title {
 			font-size: 50px;
 		}
 	}
-	@media (min-width: 361px) and (max-width: 600px) {
+	@media (max-width: 480px) {
 		.title {
-			font-size: 50px;
+			font-size: 28px;
+		}
+		.line {
+			width: 70%;
+			border: 1px solid #31ddb2;
 		}
 	}
 </style>

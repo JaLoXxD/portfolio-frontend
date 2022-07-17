@@ -55,7 +55,7 @@
 
 <script>
 	import { ref } from "vue";
-	import Title from "./Title.vue";
+	import Title from "../Title.vue";
 	export default {
 		setup() {
 			const open1 = ref(true);
@@ -217,76 +217,14 @@
 		color: #8690ad;
 		text-align: start;
 	}
-	@media (min-width: 0px) and (max-width: 419px) {
+	@media (min-width: 1391px) and (max-width: 1679px) {
 		.experience {
-			width: 90%;
-			margin-top: 40px;
-			margin-bottom: 40px;
-			flex-direction: column;
+			width: 50vw;
+			margin-top: 200px;
+			margin-bottom: 300px;
 		}
-		.experienceLeft {
+		.up {
 			width: 100%;
-			border: 0;
-			border-bottom: 1px solid #12b98f;
-		}
-		.experienceRight {
-			width: 100%;
-			margin-top: 20px !important;
-			margin: 0;
-		}
-		.buttonExperience,
-		.largeText {
-			font-size: 15px;
-		}
-		.underline {
-			width: 45%;
-			font-size: 14px;
-			display: flex;
-			flex-direction: column;
-		}
-	}
-	@media (min-width: 420px) and (max-width: 600px) {
-		.experience {
-			width: 95%;
-			padding: 0;
-		}
-		.experienceLeft {
-			width: 40%;
-		}
-		.experienceRight {
-			width: 60%;
-			margin: 0;
-			padding-left: 10px;
-		}
-		.largeText {
-			font-size: 15px;
-			font-stretch: condensed;
-		}
-		.buttonExperience {
-			padding: 8px 0 8px 0;
-			font-size: 17px;
-		}
-		.underline {
-			width: 45%;
-			font-size: 14px;
-			display: flex;
-			flex-direction: column;
-		}
-		li {
-			line-height: 15px;
-			font-size: 20px;
-			padding-bottom: 10px;
-		}
-		ul {
-			padding-left: 10px;
-		}
-	}
-
-	@media (min-width: 601px) and (max-width: 1023px) {
-		.experience {
-			width: 100%;
-			margin-top: 150px;
-			margin-bottom: 150px;
 		}
 		.experienceLeft {
 			width: 35%;
@@ -297,16 +235,53 @@
 			padding-left: 15px;
 		}
 		.largeText {
-			font-size: 20px;
+			font-size: 22px;
 			font-stretch: condensed;
 		}
 		.buttonExperience {
 			padding: 8px 0 8px 0;
-			font-size: 20px;
+			font-size: 25px;
 		}
 		.underline {
 			width: 45%;
+			font-size: 23px;
+			display: flex;
+			flex-direction: column;
+		}
+		li {
+			line-height: 30px;
 			font-size: 20px;
+			padding-bottom: 10px;
+		}
+		ul {
+			padding-left: 10px;
+		}
+	}
+	@media (min-width: 1200px) and (max-width: 1390px) {
+		.experience {
+			width: 80%;
+			margin-top: 200px;
+			margin-bottom: 300px;
+		}
+		.experienceLeft {
+			width: 35%;
+		}
+		.experienceRight {
+			width: 65%;
+			margin: 0;
+			padding-left: 15px;
+		}
+		.largeText {
+			font-size: 22px;
+			font-stretch: condensed;
+		}
+		.buttonExperience {
+			padding: 8px 0 8px 0;
+			font-size: 25px;
+		}
+		.underline {
+			width: 45%;
+			font-size: 23px;
 			display: flex;
 			flex-direction: column;
 		}
@@ -356,12 +331,11 @@
 			padding-left: 10px;
 		}
 	}
-
-	@media (min-width: 1200px) and (max-width: 1390px) {
+	@media (min-width: 601px) and (max-width: 1023px) {
 		.experience {
-			width: 80%;
-			margin-top: 200px;
-			margin-bottom: 300px;
+			width: 100%;
+			margin-top: 150px;
+			margin-bottom: 150px;
 		}
 		.experienceLeft {
 			width: 35%;
@@ -372,16 +346,16 @@
 			padding-left: 15px;
 		}
 		.largeText {
-			font-size: 22px;
+			font-size: 20px;
 			font-stretch: condensed;
 		}
 		.buttonExperience {
 			padding: 8px 0 8px 0;
-			font-size: 25px;
+			font-size: 20px;
 		}
 		.underline {
 			width: 45%;
-			font-size: 23px;
+			font-size: 20px;
 			display: flex;
 			flex-direction: column;
 		}
@@ -394,44 +368,76 @@
 			padding-left: 10px;
 		}
 	}
-	@media (min-width: 1391px) and (max-width: 1679px) {
+	@media (min-width: 420px) and (max-width: 600px) {
 		.experience {
-			width: 50vw;
-			margin-top: 200px;
-			margin-bottom: 300px;
-		}
-		.up {
-			width: 100%;
+			width: 95%;
+			padding: 0;
 		}
 		.experienceLeft {
-			width: 35%;
+			width: 40%;
 		}
 		.experienceRight {
-			width: 65%;
+			width: 60%;
 			margin: 0;
-			padding-left: 15px;
+			padding-left: 10px;
 		}
 		.largeText {
-			font-size: 22px;
+			font-size: 15px;
 			font-stretch: condensed;
 		}
 		.buttonExperience {
 			padding: 8px 0 8px 0;
-			font-size: 25px;
+			font-size: 17px;
 		}
 		.underline {
 			width: 45%;
-			font-size: 23px;
+			font-size: 14px;
 			display: flex;
 			flex-direction: column;
 		}
 		li {
-			line-height: 30px;
+			line-height: 15px;
 			font-size: 20px;
 			padding-bottom: 10px;
 		}
 		ul {
 			padding-left: 10px;
+		}
+	}
+	@media (min-width: 0px) and (max-width: 419px) {
+		.experience {
+			width: 90%;
+			margin-top: 40px;
+			margin-bottom: 40px;
+			flex-direction: column;
+		}
+		.experienceLeft {
+			width: 100%;
+			border: 0;
+			border-bottom: 1px solid #12b98f;
+		}
+		.experienceRight {
+			width: 100%;
+			margin-top: 20px !important;
+			margin: 0;
+		}
+		.buttonExperience,
+		.largeText {
+			font-size: 15px;
+		}
+		.underline {
+			width: 45%;
+			font-size: 14px;
+			display: flex;
+			flex-direction: column;
+		}
+	}
+	@media (max-width:480px){
+		ul{
+			line-height: 15px;
+		}
+		ul li{
+			margin-bottom:5px;
 		}
 	}
 </style>

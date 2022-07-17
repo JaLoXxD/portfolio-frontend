@@ -328,9 +328,11 @@
 	}
 	.card-animation {
 		animation: percent 6s forwards;
+		-webkit-animation: percent 6s forwards;
 	}
 	.num-animation {
 		animation: counter 6s forwards alternate ease-in-out;
+		-webkit-animation: counter 6s forwards alternate ease-in-out;
 	}
 	.card svg circle:nth-child(2) {
 		/* animation: percent 6s forwards; */
@@ -369,11 +371,12 @@
 			--num: var(--percent);
 		}
 	}
-	@media (min-width: 0px) and (max-width: 480px) {
+	@media (min-width: 0px) and (max-width: 500px) {
 		.knowledgesContainer h3 {
 			font-size: 40px;
 			margin: 0 0 20px 20px;
 		}
+
 		.cont .card {
 			width: 190px;
 			height: 225px;
@@ -392,15 +395,11 @@
 			opacity: 1;
 		}
 		.card:hover .cardP {
-		top: 95%;
-		opacity: 1;
-	}
-	}
-	@media (min-width: 481px) and (max-width: 600px) {
-		.cont .card {
-			width: 200px;
-			height: 250px;
-			margin: 15px 15px;
+			top: 95%;
+			opacity: 1;
+		}
+		.text {
+			font-size: 20px;
 		}
 	}
 	@media (min-width: 601px) and (max-width: 731px) {

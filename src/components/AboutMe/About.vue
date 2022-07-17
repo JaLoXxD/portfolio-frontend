@@ -17,7 +17,7 @@
 </template>
 
 <script>
-	import Title from "./Title.vue";
+	import Title from "../Title.vue";
 	import Description from "./Description.vue";
 	import FrontEndHabilities from "./FrontEndHabilities.vue";
 	import BackEndHabilities from "./BackEndHabilities.vue";
