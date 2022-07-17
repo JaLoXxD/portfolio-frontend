@@ -1,6 +1,6 @@
 <template>
-	<div class="popupContainer">
-		<div class="popup">
+	<div class="popupContainer" @click="closePopup">
+		<div class="popup" ref="popup">
 			<div class="imgCont">
 				<img src="https://via.placeholder.com/450x350" alt="" />
 			</div>
@@ -42,28 +42,54 @@
 </template>
 
 <script>
+	import { mapActions } from "vuex";
+
 	export default {
 		name: "ProjectPopup",
 		props: {
 			isVisible: Boolean,
+		},
+		methods: {
+			closePopup({ target }) {
+				const { popup } = this.$refs;
+				if (!popup.contains(target)) {
+					const newProject = {
+						isVisible: false,
+						projectId: null,
+					};
+					this.updateProject(newProject);
+				}
+			},
+			...mapActions(["updateProject"]),
 		},
 	};
 </script>
 
 <style lang="css" scoped>
 	.popupContainer {
-		position: -webkit-sticky;
-		position: sticky;
+		position: absolute;
 		width: 100vw;
-		height: 100vh;
+		height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		background-color: rgba(0, 0, 0, 0.4);
 		z-index: 9999;
 		top: 0;
+		opacity: 0;
+		pointer-events: none;
+		transition: all 0.4s ease-in-out;
+		-webkit-transition: all 0.4s ease-in-out;
+		-moz-transition: all 0.4s ease-in-out;
+		-o-transition: all 0.4s ease-in-out;
+	}
+	.showPopup {
+		opacity: 1;
+		pointer-events: all;
 	}
 	.popup {
+		position: sticky;
+		top: calc(50% - 250px);
 		width: 80%;
 		height: 500px;
 		background-color: #fff;

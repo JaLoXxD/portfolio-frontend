@@ -1,5 +1,6 @@
 const projects = [
 	{
+		id: "project0",
 		title: "Hairdressing App",
 		description:
 			"Página web SPA que permite crear clientes y citas para una peluquería. Las citas pueden modificarse para indicar que ya han sido atendidas",
@@ -9,6 +10,7 @@ const projects = [
 		technologies: ["Vue3", "NodeJs", "MongoDB"],
 	},
 	{
+		id: "project1",
 		title: "Dashboard View",
 		description:
 			"Pagina web con un ejemplo de un dashboard. Unicamente es diseño, no tiene ninguna función implementada de momento pero consume la API usada en Hairdressing App para mostrar información en una tabla.",

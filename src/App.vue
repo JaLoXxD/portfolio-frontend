@@ -1,6 +1,6 @@
 <template>
 	<Spinner :isLoading="isLoading" />
-	<ProjectPopup />
+	<ProjectPopup :class="getProjectPopup.isVisible && 'showPopup'" />
 	<div id="nav">
 		<Navbar />
 	</div>
@@ -17,6 +17,7 @@
 	import ContactInfo from "./components/ContactInfo.vue";
 	import Spinner from "./components/Spinner.vue";
 	import ProjectPopup from "./components/ProjectPopup.vue";
+	import { mapGetters } from "vuex";
 
 	export default {
 		name: "App",
@@ -32,10 +33,23 @@
 				isLoading: true,
 			};
 		},
+		watch: {
+			getProjectPopup({ isVisible }) {
+				if (isVisible) {
+					document.documentElement.style.overflow = "hidden";
+					return;
+				}
+				document.documentElement.style.overflow = "auto";
+			},
+		},
 		mounted() {
 			setTimeout(() => {
 				this.isLoading = false;
 			}, 3000);
+			console.log(this.getProjectPopup.isVisible);
+		},
+		computed: {
+			...mapGetters(["getProjectPopup"]),
 		},
 	};
 </script>
@@ -48,7 +62,7 @@
 		padding: 0;
 		max-width: 100%;
 	}
-	#app{
+	#app {
 		position: relative;
 	}
 	body {

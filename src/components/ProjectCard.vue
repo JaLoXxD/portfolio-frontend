@@ -1,5 +1,5 @@
 <template>
-	<div class="projectCard">
+	<div class="projectCard" @click="openPopup">
 		<img :src="project.image" alt="" />
 		<div class="cardContent">
 			<h3>{{ project.title }}</h3>
@@ -10,17 +10,29 @@
 </template>
 
 <script>
+	import { mapActions } from "vuex";
+
 	export default {
 		name: "ProjectCard",
 		props: {
 			project: Object,
+		},
+		methods: {
+			openPopup() {
+				const newProject = {
+					isVisible: true,
+					projectId: this.project.id,
+				};
+				this.updateProject(newProject);
+			},
+			...mapActions(["updateProject"]),
 		},
 	};
 </script>
 
 <style lang="css" scoped>
 	.projectCard {
-        cursor: pointer;
+		cursor: pointer;
 		border-radius: 25px;
 		display: flex;
 		flex-direction: column;
