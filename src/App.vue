@@ -43,8 +43,10 @@
 			},
 		},
 		mounted() {
+			document.documentElement.style.overflow = "hidden";
 			setTimeout(() => {
 				this.isLoading = false;
+				document.documentElement.style.overflow = "auto";
 			}, 3000);
 			console.log(this.getProjectPopup.isVisible);
 		},

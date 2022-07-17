@@ -2,38 +2,22 @@
 	<div class="popupContainer" @click="closePopup">
 		<div class="popup" ref="popup">
 			<div class="imgCont">
-				<img src="https://via.placeholder.com/450x350" alt="" />
+				<img :src="currentProject.image" alt="" />
 			</div>
 			<div class="infoCont">
-				<h2>Lorem, ipsum dolor.</h2>
-				<p
-					>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum aspernatur necessitatibus ut consequatur dicta aliquam perferendis
-					inventore nemo suscipit ducimus, quia expedita quis culpa quas, ea, reiciendis aliquid architecto labore! Lorem ipsum dolor sit, amet
-					consectetur adipisicing elit. Harum aspernatur necessitatibus ut consequatur dicta aliquam perferendis inventore nemo suscipit ducimus,
-					quia expedita quis culpa quas, ea, reiciendis aliquid architecto labore! Lorem ipsum dolor sit, amet consectetur adipisicing elit. Harum
-					aspernatur necessitatibus ut consequatur dicta aliquam perferendis inventore nemo suscipit ducimus, quia expedita quis culpa quas, ea,
-					reiciendis aliquid architecto labore!</p
-				>
+				<h2>{{ currentProject.title }}</h2>
+				<p>{{ currentProject.description }}</p>
 				<ul>
 					<li
-						><a><i class="fab fa-github fa-sm"></i></a
+						><a :href="currentProject.gitHubUrl" target="_blank"><i class="fab fa-github fa-sm"></i></a
 					></li>
 					<li
-						><a><i class="fas fa-link"></i></a
+						><a :href="currentProject.projectUrl" target="_blank"><i class="fas fa-link"></i></a
 					></li>
 				</ul>
 				<div class="technologies">
-					<div class="item">
-						Vue3
-					</div>
-					<div class="item">
-						Vue3
-					</div>
-					<div class="item">
-						Vue3
-					</div>
-					<div class="item">
-						Vue3
+					<div class="item" v-for="(technologie, i) in currentProject.technologies" :key="i">
+						{{ technologie }}
 					</div>
 				</div>
 			</div>
@@ -42,12 +26,21 @@
 </template>
 
 <script>
-	import { mapActions } from "vuex";
+	import { mapActions, mapGetters } from "vuex";
+	import { projects } from "../helpers/projects";
 
 	export default {
 		name: "ProjectPopup",
 		props: {
 			isVisible: Boolean,
+		},
+		data() {
+			return {
+				currentProject: {},
+			};
+		},
+		mounted() {
+			console.log(this.getProjectPopup);
 		},
 		methods: {
 			closePopup({ target }) {
@@ -55,12 +48,21 @@
 				if (!popup.contains(target)) {
 					const newProject = {
 						isVisible: false,
-						projectId: null,
+						projectId: this.currentProject.id,
 					};
 					this.updateProject(newProject);
 				}
 			},
 			...mapActions(["updateProject"]),
+		},
+		watch: {
+			getProjectPopup({ projectId }) {
+				this.currentProject = projects.filter((project) => project.id === projectId);
+				this.currentProject = this.currentProject[0];
+			},
+		},
+		computed: {
+			...mapGetters(["getProjectPopup"]),
 		},
 	};
 </script>
@@ -154,11 +156,13 @@
 	.popup .infoCont ul li {
 		cursor: pointer;
 		font-size: 30px;
-		color: rgb(12 41 62);
 		transition: all 0.4s ease-in-out;
 		-webkit-transition: all 0.4s ease-in-out;
 		-moz-transition: all 0.4s ease-in-out;
 		-o-transition: all 0.4s ease-in-out;
+	}
+	.popup .infoCont ul li a {
+		color: rgb(12 41 62);
 	}
 	.popup .infoCont ul li:last-child a {
 		font-size: 26px;
@@ -185,5 +189,26 @@
 	}
 	.popup .infoCont .technologies .item:hover {
 		background-color: rgb(7, 153, 117);
+	}
+	@media (max-width: 1000px) {
+		.popup {
+			height: 70vh;
+			top: 15vh;
+		}
+		.popup .infoCont,
+		.popup .imgCont {
+			width: 100%;
+		}
+		
+		.popup .imgCont {
+			height: 60%;
+		}
+		.popup .infoCont {
+			height: 40%;
+		}
+		.popup .imgCont img {
+			width: 100%;
+			object-position: 100% 0;
+		}
 	}
 </style>

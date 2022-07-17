@@ -30,6 +30,8 @@
 		margin: 60px 0;
 		text-align: center;
 		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
 		gap: 30px;
 	}
 	#projectsCont h3 {

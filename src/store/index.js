@@ -24,7 +24,6 @@ export default createStore({
 			return state.currentYear;
 		},
 		getProjectPopup(state) {
-			console.log(state.projectPopup);
 			return state.projectPopup;
 		},
 	},

@@ -12,7 +12,7 @@
 		},
 		computed: {
 			toogleSpinner() {
-                console.log(this.isLoading)
+				console.log(this.isLoading);
 				return !this.isLoading && "loaded";
 			},
 		},
@@ -24,16 +24,20 @@
 		position: absolute;
 		z-index: 9999;
 		width: 100%;
+		top: 0;
 		height: 100%;
-		display: flex;
-		justify-content: center;
-		align-items: center;
 		background-color: #002142;
-        transition: all .5s ease-in-out;
+		transition: all 0.5s ease-in-out;
+	}
+	#loaderCont img {
+		position: sticky;
+		top: calc(50% - 100px);
+		display: block;
+		margin: 0 auto;
 	}
 	.loaded {
-        opacity: 0 !important;
-        pointer-events: none !important;
-        z-index: 0 !important;
-    }
+		opacity: 0 !important;
+		pointer-events: none !important;
+		z-index: 0 !important;
+	}
 </style>
