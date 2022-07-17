@@ -158,7 +158,7 @@
 			margin: 10px 0;
 		}
 		.navbar-brand{
-			width:20%;
+			width:60%;
 		}
 	}
 	@media (max-width: 1439px) {
