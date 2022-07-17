@@ -1,5 +1,6 @@
 <template>
 	<Spinner :isLoading="isLoading" />
+	<ProjectPopup />
 	<div id="nav">
 		<Navbar />
 	</div>
@@ -15,6 +16,7 @@
 	import Footer from "./components/Footer.vue";
 	import ContactInfo from "./components/ContactInfo.vue";
 	import Spinner from "./components/Spinner.vue";
+	import ProjectPopup from "./components/ProjectPopup.vue";
 
 	export default {
 		name: "App",
@@ -23,6 +25,7 @@
 			Footer,
 			ContactInfo,
 			Spinner,
+			ProjectPopup,
 		},
 		data() {
 			return {
@@ -43,8 +46,11 @@
 		box-sizing: border-box;
 		margin: 0;
 		padding: 0;
+		max-width: 100%;
 	}
-
+	#app{
+		position: relative;
+	}
 	body {
 		background-color: #002142;
 		display: flex;
