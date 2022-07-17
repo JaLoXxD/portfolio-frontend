@@ -12,7 +12,7 @@
 	import { projects } from "../helpers/projects.js";
 
 	export default {
-		name: "Proyects",
+		name: "Projects",
 		components: {
 			Title,
 			ProjectCard,
@@ -27,7 +27,7 @@
 
 <style scoped>
 	#projectsCont {
-		margin: 60px 0;
+		margin: 200px 0 0;
 		text-align: center;
 		display: flex;
 		flex-wrap: wrap;

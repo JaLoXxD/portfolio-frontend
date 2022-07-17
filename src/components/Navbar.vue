@@ -24,8 +24,8 @@
 						<li class="" id="experienceNav">
 							<router-link to="#experience">Experiencia</router-link>
 						</li>
-						<li class="">
-							<a class="" href="#proyects">Proyectos</a>
+						<li id="projectsNav">
+							<router-link to="#proyects">Proyectos</router-link>
 						</li>
 						<li class="" id="contactNav">
 							<router-link class="" to="#contact">Contacto</router-link>
@@ -67,7 +67,6 @@
 		background-color: #229679;
 		border-radius: 0 0 20px 20px;
 		text-align: center;
-		height: fit-content;
 		widows: 100%;
 	}
 	.navbar {
@@ -80,7 +79,7 @@
 		position: relative;
 	}
 	.navbar-brand {
-		width: 10%;
+		width: fit-content !important;
 	}
 	.active,
 	.navbar-nav li:hover {
@@ -142,9 +141,6 @@
 			width: 80px;
 			height: 80px;
 		}
-		.navbar-brand {
-			margin-left: -20px;
-		}
 		.navbar {
 			height: auto;
 		}
@@ -156,9 +152,6 @@
 		li,
 		button {
 			margin: 10px 0;
-		}
-		.navbar-brand{
-			width:20%;
 		}
 	}
 	@media (max-width: 1439px) {
@@ -173,8 +166,29 @@
 		#navbarSupportedContent {
 			font-size: 25px !important;
 		}
-		.navbar{
+		.navbar {
 			padding: 10px 50px;
+		}
+	}
+	@media (max-width: 500px) {
+		.navbar {
+			padding: 10px 20px;
+		}
+		.navbar-nav {
+			width: 100%;
+		}
+		#navbar {
+			max-height: 80px !important;
+		}
+		.navImg {
+			height: 60px;
+			width: auto;
+		}
+	}
+	@media (max-width: 350px) {
+		li a,
+		button {
+			font-size: 20px !important;
 		}
 	}
 </style>

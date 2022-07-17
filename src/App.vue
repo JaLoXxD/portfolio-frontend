@@ -90,7 +90,7 @@
 	.principalContainer {
 		width: 70%;
 		height: auto;
-		margin: 0 15%;
+		margin: 110px auto 0;
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;

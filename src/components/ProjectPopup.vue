@@ -109,6 +109,7 @@
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: 50% 100%;
 	}
 	.popup .infoCont {
 		width: 40%;
@@ -192,23 +193,52 @@
 	}
 	@media (max-width: 1000px) {
 		.popup {
-			height: 70vh;
-			top: 15vh;
+			height: 80vh;
+			top: 10vh;
 		}
 		.popup .infoCont,
 		.popup .imgCont {
 			width: 100%;
 		}
-		
+
 		.popup .imgCont {
 			height: 60%;
 		}
 		.popup .infoCont {
 			height: 40%;
 		}
+		.popup .infoCont h2 {
+			font-size: 24px;
+		}
+		.popup .infoCont p {
+			font-size: 18px;
+		}
 		.popup .imgCont img {
 			width: 100%;
-			object-position: 100% 0;
+		}
+	}
+	@media (max-width: 400px) {
+		.popup {
+			height: 80vh;
+			top: 10vh;
+		}
+		.popup .infoCont,
+		.popup .imgCont {
+			width: 100%;
+		}
+
+		.popup .imgCont,
+		.popup .infoCont {
+			height: 50%;
+		}
+		.popup .infoCont h2 {
+			font-size: 24px;
+		}
+		.popup .infoCont p {
+			font-size: 18px;
+		}
+		.popup .imgCont img {
+			width: 100%;
 		}
 	}
 </style>

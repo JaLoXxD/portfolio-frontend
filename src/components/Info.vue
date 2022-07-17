@@ -48,10 +48,7 @@
 		color: #8892b0;
 	}
 	.info {
-		padding-top: 70px;
-		margin-top: 200px;
-		margin-bottom: 200px;
-		height: 50vh;
+		height: fit-content;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

@@ -156,7 +156,6 @@
 		margin: 0 auto;
 		width: 45vw;
 		margin-top: 200px;
-		margin-bottom: 200px;
 	}
 	.experienceLeft {
 		border-left: 1px solid #12b98f;

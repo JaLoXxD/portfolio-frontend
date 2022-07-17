@@ -54,6 +54,7 @@
 		max-width: 100%;
 		height: 160px;
 		object-fit: cover;
+		object-position: 50% 0%;
 	}
 	.projectCard .cardContent {
 		padding: 20px 15px;

@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<section data-aos="fade" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true">
+		<section class="division" data-aos="fade" data-aos-delay="100" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true">
 			<Info />
 		</section>
 		<section
@@ -33,13 +33,13 @@
 			data-aos-duration="1000"
 			data-aos-easing="ease-in-out"
 			data-aos-mirror="true"
-			id="proyects"
+			id="projects"
 		>
-			<Proyects />
+			<Projects />
 		</section>
 		<section
 			class="division"
-			data-aos="fade"
+			data-aos="fade-up"
 			data-aos-delay="100"
 			data-aos-duration="1000"
 			data-aos-easing="ease-in-out"
@@ -55,7 +55,7 @@
 	import Info from "../components/Info.vue";
 	import About from "../components/About.vue";
 	import Experience from "../components/Experience.vue";
-	import Proyects from "../components/Proyects.vue";
+	import Projects from "../components/Projects.vue";
 	import Contact from "../components/Contact.vue";
 	import $ from "jquery";
 
@@ -65,18 +65,18 @@
 			Info,
 			About,
 			Experience,
-			Proyects,
+			Projects,
 			Contact,
 		},
 		mounted() {
-			var sections = $("section"),
+			const sections = $("section"),
 				nav = $("nav"),
 				nav_height = nav.outerHeight();
 			$(window).on("scroll", function() {
-				var cur_pos = $(this).scrollTop();
+				const cur_pos = $(this).scrollTop();
 
 				sections.each(function() {
-					var top = $(this).offset().top - nav_height,
+					const top = $(this).offset().top - nav_height,
 						bottom = top + $(this).outerHeight();
 
 					if (cur_pos >= top && cur_pos <= bottom) {
@@ -87,7 +87,6 @@
 					}
 				});
 			});
-			
 		},
 	};
 </script>
@@ -95,9 +94,12 @@
 <style>
 	.division {
 		margin: 0;
-		padding-top: 100px;
 		height: fit-content;
+		min-height: calc(100vh - 110px);
 		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
 	}
 	@media (min-width: 0px) and (max-width: 600px) {
 		.division {

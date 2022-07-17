@@ -14,7 +14,7 @@ const router = createRouter({
 	routes,
 	//function to move to different sections
 	scrollBehavior: function(to, from, savedPosition) {
-		//console.log(savedPosition);
+		console.log(savedPosition);
 		if (savedPosition) {
 			return savedPosition;
 		} else if (to.hash) {
