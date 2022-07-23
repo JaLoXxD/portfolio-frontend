@@ -2,17 +2,17 @@
 	<div class="popupContainer" @click="closePopup">
 		<div class="popup" ref="popup">
 			<div class="imgCont">
-				<img :src="currentProject.image" alt="" />
+				<img ref="projectImg" :src="currentProject.image" alt="" />
 			</div>
 			<div class="infoCont">
 				<h2>{{ currentProject.title }}</h2>
 				<p>{{ currentProject.description }}</p>
 				<ul>
 					<li
-						><a :href="currentProject.gitHubUrl" target="_blank"><i class="fab fa-github fa-sm"></i></a
+						><a :href="currentProject.gitHubUrl" target="_blank" title="GitHub Repository"><i class="fab fa-github fa-sm"></i></a
 					></li>
 					<li
-						><a :href="currentProject.projectUrl" target="_blank"><i class="fas fa-link"></i></a
+						><a :href="currentProject.projectUrl" target="_blank" title="Project Link"><i class="fas fa-link"></i></a
 					></li>
 				</ul>
 				<div class="technologies">
@@ -39,9 +39,7 @@
 				currentProject: {},
 			};
 		},
-		mounted() {
-			console.log(this.getProjectPopup);
-		},
+		mounted() {},
 		methods: {
 			closePopup({ target }) {
 				const { popup } = this.$refs;
@@ -56,7 +54,19 @@
 			...mapActions(["updateProject"]),
 		},
 		watch: {
-			getProjectPopup({ projectId }) {
+			getProjectPopup({ projectId, isVisible }) {
+				console.log(projectId);
+				const { projectImg } = this.$refs;
+				if (!isVisible) {
+					console.log("visible");
+					projectImg.src = require("@/assets/images/image-spinner.svg");
+					projectImg.classList.add("spinnerImg");
+				} else {
+					projectImg.src = this.currentProject.image;
+					if (projectImg.classList.contains("spinnerImg")) {
+						projectImg.classList.remove("spinnerImg");
+					}
+				}
 				this.currentProject = projects.filter((project) => project.id === projectId);
 				this.currentProject = this.currentProject[0];
 			},
@@ -94,7 +104,7 @@
 		top: calc(50% - 250px);
 		width: 80%;
 		height: 500px;
-		background-color: #fff;
+		background-color: #002142;
 		border-radius: 20px;
 		padding: 0;
 		display: flex;
@@ -102,14 +112,22 @@
 		overflow: hidden;
 	}
 	.popup .imgCont {
+		background-color: rgb(241, 242, 243);
 		width: 60%;
 		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	.popup .imgCont img {
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
 		object-position: 50% 100%;
+	}
+	.popup .imgCont .spinnerImg {
+		width: 100px;
+		height: 100px;
 	}
 	.popup .infoCont {
 		width: 40%;
@@ -128,7 +146,7 @@
 	}
 	.popup .infoCont p {
 		font-size: 18px;
-		color: #363636;
+		color: #fff;
 		overflow-y: auto;
 	}
 	/* width */
@@ -163,7 +181,7 @@
 		-o-transition: all 0.4s ease-in-out;
 	}
 	.popup .infoCont ul li a {
-		color: rgb(12 41 62);
+		color: rgb(18 185 143);
 	}
 	.popup .infoCont ul li:last-child a {
 		font-size: 26px;

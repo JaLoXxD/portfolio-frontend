@@ -32,12 +32,14 @@
 
 <style lang="css" scoped>
 	.projectCard {
+		-webkit-box-shadow: inset 0px 1px 26px 1px #12b98f;
+		box-shadow: inset 0px 1px 26px 1px #12b98f;
 		cursor: pointer;
 		border-radius: 25px;
 		display: flex;
 		flex-direction: column;
 		width: 300px;
-		background-color: #fff;
+		background-color: #0c293e;
 		overflow: hidden;
 		transition: all 0.5s ease-in-out;
 		-webkit-transition: all 0.5s ease-in-out;
@@ -63,7 +65,8 @@
 		font-size: 24px;
 		width: fit-content;
 		margin: 0 auto;
-		color: rgb(18 185 143);
+		/* color: rgb(18 185 143); */
+		color: #fff;
 		position: relative;
 		transition: all 0.4s ease-in-out;
 		-webkit-transition: all 0.4s ease-in-out;

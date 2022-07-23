@@ -31,8 +31,8 @@
 		text-align: center;
 		display: flex;
 		flex-wrap: wrap;
-		justify-content: center;
-		gap: 30px;
+		justify-content: space-around;
+		gap: 50px;
 	}
 	#projectsCont h3 {
 		font-size: 40px;

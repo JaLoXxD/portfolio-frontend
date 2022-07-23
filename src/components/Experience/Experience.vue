@@ -4,7 +4,7 @@
 		<div class="experienceLeft">
 			<button :class="activeButton1" @click="change(0)">NovaTravelGroup</button>
 			<button :class="activeButton2" @click="change(1)">Habitacars</button>
-			<button :class="activeButton3" @click="change(2)">AlphaCrewStudio</button>
+			<button :class="activeButton3" @click="change(2)">AlphaCrew Studio</button>
 		</div>
 		<div class="experienceRight">
 			<transition name="fade">
@@ -154,7 +154,7 @@
 	.experience {
 		display: flex;
 		margin: 0 auto;
-		width: 45vw;
+		width: 50vw;
 		margin-top: 200px;
 	}
 	.experienceLeft {
