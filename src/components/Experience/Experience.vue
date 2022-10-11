@@ -2,13 +2,15 @@
 	<Title Text="Experiencia" />
 	<div class="experience">
 		<div class="experienceLeft">
-			<button :class="activeButton1" @click="change(0)">NovaTravelGroup</button>
-			<button :class="activeButton2" @click="change(1)">Habitacars</button>
-			<button :class="activeButton3" @click="change(2)">AlphaCrew Studio</button>
+			<button :class="activeButton1" @click="change(1)">NovaTravelGroup</button>
+			<button :class="activeButton2" @click="change(2)">Habitacars</button>
+			<button :class="activeButton3" @click="change(3)">AlphaCrew Studio</button>
+			<button :class="activeButton4" @click="change(4)">UIO Soft +</button>
+			<button :class="activeButton5" @click="change(5)">Conecta Seproteico</button>
 		</div>
 		<div class="experienceRight">
 			<transition name="fade">
-				<div v-if="job == 0 && open1" class="rightContent">
+				<div v-if="job === 1 && open1" class="rightContent">
 					<div class="duration">
 						<p class="largeText underline"><span class="up">Desde:</span> Septiembre 2020</p>
 						<p class="largeText underline"><span class="up">Hasta:</span> Febrero 2021</p>
@@ -21,8 +23,8 @@
 					</ul>
 				</div>
 			</transition>
-			<transition name="fade2">
-				<div v-if="job == 1 && open2" class="rightContent">
+			<transition name="fade">
+				<div v-if="job === 2 && open2" class="rightContent">
 					<div class="duration">
 						<p class="largeText underline"><span class="up">Desde:</span> Febrero 2021</p>
 						<p class="largeText underline"><span class="up">Hasta:</span> Junio 2021</p>
@@ -35,17 +37,46 @@
 					</ul>
 				</div>
 			</transition>
-			<transition name="fade3">
-				<div v-if="job == 2 && open2" class="rightContent">
+			<transition name="fade">
+				<div v-if="job === 3 && open3" class="rightContent">
 					<div class="duration">
 						<p class="largeText underline"><span class="up">Desde: </span> Julio 2021</p>
-						<p class="largeText underline"><span class="up">Hasta: </span> Actualidad</p>
+						<p class="largeText underline"><span class="up">Hasta: </span> Julio 2022</p>
 					</div>
 					<ul>
 						<li><span class="largeText">Desarrollo de front end (Html, CSS, Wordpress).</span></li>
 						<li><span class="largeText">Desarrollo de backend (Firebase, NodeJS).</span></li>
 						<li><span class="largeText">Optimización de carga de páginas web.</span></li>
 						<li><span class="largeText">Deploy a servidores.</span></li>
+					</ul>
+				</div>
+			</transition>
+			<transition name="fade">
+				<div v-if="job === 4 && open4" class="rightContent">
+					<div class="duration">
+						<p class="largeText underline"><span class="up">Desde: </span> Agosto 2022</p>
+						<p class="largeText underline"><span class="up">Hasta: </span> Septiembre 2022</p>
+					</div>
+					<span class="largeText">Proyecto freelance en el que se desarrolló una API usando nodeJs para una applicación bancaria para solicitar préstamos.</span>
+					<ul class="mt-3">
+						<li><span class="largeText">Creación del modelo de base de datos.</span></li>
+						<li><span class="largeText">Uso de middlewares para validar información.</span></li>
+						<li><span class="largeText">Testing con jest.</span></li>
+						<li><span class="largeText">Single Responsibility pattern.</span></li>
+					</ul>
+				</div>
+			</transition>
+			<transition name="fade">
+				<div v-if="job === 5 && open5" class="rightContent">
+					<div class="duration">
+						<p class="largeText underline"><span class="up">Desde: </span> Agosto 2022</p>
+						<p class="largeText underline"><span class="up">Hasta: </span> Actualidad</p>
+					</div>
+					<ul>
+						<li><span class="largeText">Desarrollo de front end (Angular).</span></li>
+						<li><span class="largeText">Migración de software bancario a nueva versión.</span></li>
+						<li><span class="largeText">Creación de componentes reutilizables.</span></li>
+						<li><span class="largeText">Buenas prácticas y CLEAN code.</span></li>
 					</ul>
 				</div>
 			</transition>
@@ -60,39 +91,68 @@
 		setup() {
 			const open1 = ref(true);
 			const open2 = ref(false);
+			const open3 = ref(false);
+			const open4 = ref(false);
+			const open5 = ref(false);
 			return {
 				open1,
 				open2,
+				open3,
+				open4,
+				open5,
 			};
 		},
 		name: "Experience",
 		data() {
 			return {
-				job: 0,
+				job: 1,
 				show: true,
 			};
 		},
 		methods: {
 			change(n) {
 				this.job = n;
-				if (n == 0) {
+				this.open1 = false;
+				this.open2 = false;
+				this.open3 = false;
+				this.open4 = false;
+				this.open5 = false;
+				switch (n) {
+					case 1:
+						this.open1 = true;
+						break;
+					case 2:
+						this.open2 = true;
+						break;
+					case 3:
+						this.open3 = true;
+						break;
+					case 4:
+						this.open4 = true;
+						break;
+					case 5:
+						this.open5 = true;
+						break;
+					default:
 					this.open1 = true;
-					this.open2 = false;
-				} else {
-					this.open1 = false;
-					this.open2 = true;
 				}
 			},
 		},
 		computed: {
 			activeButton1() {
-				return this.job === 0 ? "buttonExperience activeButton" : "buttonExperience";
-			},
-			activeButton2() {
 				return this.job === 1 ? "buttonExperience activeButton" : "buttonExperience";
 			},
-			activeButton3() {
+			activeButton2() {
 				return this.job === 2 ? "buttonExperience activeButton" : "buttonExperience";
+			},
+			activeButton3() {
+				return this.job === 3 ? "buttonExperience activeButton" : "buttonExperience";
+			},
+			activeButton4() {
+				return this.job === 4 ? "buttonExperience activeButton" : "buttonExperience";
+			},
+			activeButton5() {
+				return this.job === 5 ? "buttonExperience activeButton" : "buttonExperience";
 			},
 		},
 		components: {
@@ -133,6 +193,17 @@
 
 	.fade3-enter-from,
 	.fade3-leave-from {
+		opacity: 0;
+	}
+	.fade4-leave-active {
+		transition: opacity 0s ease;
+	}
+	.fade4-enter-active {
+		transition: opacity 5s ease;
+	}
+
+	.fade4-enter-from,
+	.fade4-leave-from {
 		opacity: 0;
 	}
 	.sectionTitle {
@@ -432,12 +503,12 @@
 			flex-direction: column;
 		}
 	}
-	@media (max-width:480px){
-		ul{
+	@media (max-width: 480px) {
+		ul {
 			line-height: 15px;
 		}
-		ul li{
-			margin-bottom:5px;
+		ul li {
+			margin-bottom: 5px;
 		}
 	}
 </style>
