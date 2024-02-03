@@ -3,11 +3,11 @@
 	<div class="knowledgesContainer">
 		<HabilitiesTitle text="Front-End" />
 		<div class="cont">
-			<Card :percent="80" :title="'HTML'" :image="'html'" :description="'Construcción de estucturas de páginas web'" />
-			<Card :percent="70" :title="'CSS'" :image="'css'" :description="'Diseño y animaciones'" />
+			<Card :percent="95" :title="'HTML'" :image="'html'" :description="'Construcción de estucturas de páginas web'" />
+			<Card :percent="90" :title="'CSS'" :image="'css'" :description="'Diseño y animaciones'" />
 			<Card :percent="70" :title="'VueJs'" :image="'vuejs'" :description="'Paginas SPA'" />
-			<Card :percent="50" :title="'React'" :image="'react'" :description="'Paginas SPA'" />
-			<Card :percent="40" :title="'Angular'" :image="'angularjs'" :description="'Paginas SPA'" />
+			<!--<Card :percent="50" :title="'React'" :image="'react'" :description="'Paginas SPA'" /> -->
+			<Card :percent="90" :title="'Angular'" :image="'angularjs'" :description="'Paginas SPA'" />
 		</div>
 	</div>
 </template>

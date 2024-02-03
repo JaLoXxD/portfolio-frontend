@@ -4,7 +4,7 @@
 		<div class="cont">
 			<Card :percent="75" :title="'SQL'" :image="'sql'" :description="'Modelado y manejo de bases de datos'" />
 			<Card :percent="60" :title="'NoSQL'" :image="'mongodb'" :description="'Modelado y manejo de bases de datos'" />
-			<Card :percent="80" :title="'JavaScript'" :image="'js'" :description="'FrontEnd y BackEnd'" />
+			<Card :percent="90" :title="'JavaScript'" :image="'js'" :description="'FrontEnd y BackEnd'" />
 			<Card :percent="55" :title="'Git'" :image="'git'" :description="'Proyectos en grupo de trabajo'" />
 		</div>
 	</div>

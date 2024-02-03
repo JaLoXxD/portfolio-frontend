@@ -3,8 +3,8 @@
 		<HabilitiesTitle text="Back-End" />
 		<div class="cont">
 			<Card :percent="50" :title="'Python'" :image="'Python'" :description="'Desarrollo de APIs'" />
-			<Card :percent="50" :title="'PHP'" :image="'php'" :description="'Desarrollo de APIs y modelo MVC'" />
-			<Card :percent="55" :title="'NodeJs'" :image="'node-js'" :description="'Desarrollo de APIs y web scraping'" />
+			<Card :percent="80" :title="'Java'" :image="'java'" :description="'Desarrollo de APIs y microservicios'" />
+			<Card :percent="75" :title="'NodeJs'" :image="'node-js'" :description="'Desarrollo de APIs y web scraping'" />
 		</div>
 	</div>
 </template>
